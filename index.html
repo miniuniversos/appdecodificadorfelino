@@ -2552,37 +2552,6 @@ input,select{font-family:inherit}
       </div>
     </sc-if>
 
-    <sc-if value="{{ isOffer }}" hint-placeholder-val="{{ false }}">
-      <div style="display:flex;flex-direction:column;gap:18px;animation:dfRise .4s ease both">
-        <div>
-          <div style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#0E7C86;margin-bottom:10px">{{ t.badge }}</div>
-          <h2 style="font-family:Georgia,'Times New Roman',serif;font-size:27px;line-height:1.14;letter-spacing:-.02em;font-weight:500;margin:0 0 10px;text-wrap:pretty">{{ t.offerTitle }}</h2>
-          <p style="margin:0;font-size:14px;line-height:1.6;color:#54595E;text-wrap:pretty">{{ t.offerLead }}</p>
-        </div>
-
-        <div style="display:grid;gap:1px;background:#E7E4DE;border:1px solid #E7E4DE;border-radius:14px;overflow:hidden">
-          <sc-for list="{{ offerItems }}" as="o" hint-placeholder-count="4">
-            <div style="display:flex;gap:12px;align-items:flex-start;padding:15px;background:#fff">
-              <div style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10px;color:#0E7C86;padding-top:3px;flex:none">{{ o.n }}</div>
-              <div>
-                <div style="font-size:14px;font-weight:600;line-height:1.35;margin-bottom:4px;text-wrap:pretty">{{ o.title }}</div>
-                <div style="font-size:12.5px;line-height:1.55;color:#6E7378;text-wrap:pretty">{{ o.body }}</div>
-              </div>
-            </div>
-          </sc-for>
-        </div>
-
-        <div style="display:flex;align-items:baseline;gap:10px;padding:14px 16px;border-radius:13px;background:#12333A;color:#EAF1F1">
-          <span style="flex:1;font-size:13px">{{ t.payTotal }}</span>
-          <span style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;color:#7FB0B5;text-decoration:line-through">$40</span>
-          <span style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:16px">$12</span>
-        </div>
-
-        <button sc-camel-on-click="{{ offerUnlock }}" style="padding:17px 18px;border-radius:12px;border:0;font-size:15.5px;font-weight:600;background:#0E7C86;color:#fff;box-shadow:0 6px 18px -8px rgba(14,124,134,.6)" style-hover="filter:brightness(1.06)">{{ t.offerCta }}</button>
-        <p style="margin:0;font-size:12px;line-height:1.55;color:#8A8F94;text-align:center;text-wrap:pretty">{{ t.offerNote }}</p>
-      </div>
-    </sc-if>
-
     <sc-if value="{{ isVets }}" hint-placeholder-val="{{ false }}">
       <div style="display:flex;flex-direction:column;gap:18px;animation:dfRise .35s ease both">
         <div>
@@ -3013,15 +2982,6 @@ input,select{font-family:inherit}
       </div>
     </sc-if>
 
-    <sc-if value="{{ showLock }}" hint-placeholder-val="{{ false }}">
-      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:18px;padding:20px 0;animation:dfRise .35s ease both">
-        <div style="align-self:flex-start;padding:5px 10px;border-radius:999px;background:#F1EFEA;border:1px solid #E2DFD8;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:#6E7378">{{ t.lockedTitle }}</div>
-        <h2 style="font-family:Georgia,'Times New Roman',serif;font-size:26px;line-height:1.15;letter-spacing:-.018em;font-weight:500;margin:0">{{ lockLabel }}</h2>
-        <p style="margin:0;font-size:13.5px;line-height:1.55;color:#54595E;text-wrap:pretty">{{ t.payBody }}</p>
-        <button sc-camel-on-click="{{ goPay }}" style="padding:16px 18px;border-radius:12px;border:0;font-size:15px;font-weight:600;background:#0E7C86;color:#fff;box-shadow:0 6px 18px -8px rgba(14,124,134,.6)" style-hover="filter:brightness(1.06)">{{ t.payCta }}</button>
-      </div>
-    </sc-if>
-
     <sc-if value="{{ isExp }}" hint-placeholder-val="{{ false }}">
       <div style="display:flex;flex-direction:column;gap:16px;animation:dfRise .35s ease both">
         <div>
@@ -3040,40 +3000,6 @@ input,select{font-family:inherit}
       </div>
     </sc-if>
 
-    <sc-if value="{{ isPaywall }}" hint-placeholder-val="{{ false }}">
-      <div style="display:flex;flex-direction:column;gap:18px;animation:dfRise .35s ease both">
-        <div>
-          <h2 style="font-family:Georgia,'Times New Roman',serif;font-size:27px;line-height:1.14;letter-spacing:-.02em;font-weight:500;margin:0 0 9px;text-wrap:pretty">{{ t.payTitle }}</h2>
-          <p style="margin:0;font-size:13.5px;line-height:1.55;color:#54595E;text-wrap:pretty">{{ t.payBody }}</p>
-        </div>
-
-        <div style="display:grid;gap:1px;background:#E7E4DE;border:1px solid #E7E4DE;border-radius:14px;overflow:hidden">
-          <sc-for list="{{ bonuses }}" as="b" hint-placeholder-count="5">
-            <div style="display:flex;align-items:center;gap:12px;padding:13px 15px;background:#fff">
-              <span style="flex:1;font-size:13px;line-height:1.35">{{ b.name }}</span>
-              <span style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;color:#A5A9AD;text-decoration:line-through;flex:none">{{ b.was }}</span>
-              <span style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;color:#0E7C86;flex:none;width:34px;text-align:right">{{ b.now }}</span>
-            </div>
-          </sc-for>
-          <div style="display:flex;align-items:center;gap:12px;padding:14px 15px;background:#12333A;color:#EAF1F1">
-            <span style="flex:1;font-size:12.5px;font-weight:600">{{ t.payTotal }}</span>
-            <span style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;color:#7FB0B5;text-decoration:line-through">$40</span>
-            <span style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:15px;width:44px;text-align:right">$12</span>
-          </div>
-        </div>
-
-        <div style="display:flex;align-items:baseline;gap:9px">
-          <span style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#0E7C86">{{ t.paySave }}</span>
-          <span style="font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10.5px;color:#8A8F94">· {{ t.payOnce }}</span>
-        </div>
-
-        <button sc-camel-on-click="{{ unlock }}" style="padding:17px 18px;border-radius:12px;border:0;font-size:15.5px;font-weight:600;background:#0E7C86;color:#fff;box-shadow:0 6px 18px -8px rgba(14,124,134,.6)" style-hover="filter:brightness(1.06)">{{ t.payCta }}</button>
-
-        <div style="border-radius:14px;background:#FBF3E7;border:1px solid #F0E0C6;padding:15px 16px;font-size:12.5px;line-height:1.5;color:#6B4E14;text-wrap:pretty">{{ t.guarantee }}</div>
-
-        <button sc-camel-on-click="{{ payBack }}" style="align-self:center;background:none;border:0;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.06em;color:#8A8F94;text-decoration:underline;padding:8px">{{ t.payBack }}</button>
-      </div>
-    </sc-if>
   </div>
 
   <sc-if value="{{ showFooter }}" hint-placeholder-val="{{ true }}">
@@ -3712,17 +3638,6 @@ const T = {
     forcedNote: 'Marcaste señales médicas: tienen prioridad sobre el patrón conductual dominante ({x}), que se trabaja después de descartar causa clínica.', signals: '02 · Distribución de señales',
     action24: '03 · Acción para las próximas 24 horas', plan: '09 · Plan de 7 días',
     vetLabel: '10 · Cuándo sí ir al veterinario', restart: 'Empezar de nuevo',
-    offerTitle: 'Tu informe está listo',
-    offerLead: 'Terminamos de cruzar tus respuestas. Para abrir el informe completo y guardar tu plan necesitas el acceso, que es un pago único de $12 USD. Esto es lo que recibes, explicado en palabras simples.',
-    offerItems: [
-      { t: 'Tu informe personalizado completo', b: 'El hallazgo principal de tu gato con su porcentaje, el factor secundario, la lectura clínica de por qué pasa, tus respuestas que más pesaron, cinco recomendaciones concretas, qué evitar esta semana y los datos listos para llevar al veterinario.' },
-      { t: 'Tu plan de 7 días con registro diario', b: 'Una acción para las próximas 24 horas y siete días con su checklist. Marcas cada día en la app y el plan se ajusta a tu prioridad principal, no es una lista genérica.' },
-      { t: 'Diccionario de 26 comportamientos', b: 'Un buscador donde escribes lo que hace tu gato y te dice por qué lo hace y qué hacer. Por ejemplo: "maúlla a las 3 de la mañana", "orina fuera del arenero", "bebe muchísima agua", "se lame hasta quedar sin pelo".' },
-      { t: 'Qué hacer en los momentos difíciles', b: 'Paso a paso para una mudanza, para la visita al veterinario y para cuando llega otra persona o otro animal a la casa. Incluye la lista de lo que hay que preparar antes, para que no se te olvide nada.' },
-      { t: 'Señales de alarma marcadas en rojo', b: 'En cada comportamiento te decimos cuándo es normal y cuándo hay que ir al veterinario ese mismo día. Así dejas de dudar si estás exagerando o si estás dejando pasar algo grave.' },
-      { t: 'Se queda guardado en tu app', b: 'Lo consultas cuando lo necesites, las veces que quieras. No es un curso ni un video largo: es una herramienta para buscar la respuesta en el momento.' } ],
-    offerCta: 'Desbloquear todo por $12 USD',
-    offerNote: 'Pago único de $12 USD, no es suscripción. Si sientes que no te sirve, te devolvemos el dinero dentro de los primeros 7 días.',
     urgentBadge: 'Atención prioritaria',
     urgentTitle: 'Esto lo tiene que ver un veterinario',
     urgentBody: 'Marcaste al menos una señal que puede ser urgente. Ningún plan de conducta reemplaza una revisión médica. Busca atención cerca de ti hoy.',
@@ -3761,7 +3676,7 @@ const T = {
     navHome: 'Inicio', navDiag: 'Lectura', navRes: 'Recursos', navExp: 'Entregas',
     expTitle: 'Entregas independientes',
     expNote: 'Cada pieza se descarga como un archivo HTML propio: se abre en cualquier navegador, funciona sin conexión y se puede imprimir o enviar por separado.',
-    expDownload: 'Descargar', expLocked: 'Requiere acceso completo', expNeedsRead: 'Completa tu lectura primero',
+    expDownload: 'Descargar', expNeedsRead: 'Completa tu lectura primero',
     expItems: [
       { k: 'informe', t: 'Informe personalizado', b: 'Tu prioridad principal, la distribución de señales, la lectura del caso, tus respuestas que más pesaron, las recomendaciones, qué evitar y los datos para el veterinario.' },
       { k: 'plan', t: 'Plan de 7 días', b: 'Los siete días ajustados a tu prioridad, con el registro diario y espacio para marcar cada jornada en papel.' },
@@ -3770,7 +3685,6 @@ const T = {
     navDict: 'Diccionario', navCrisis: 'Crisis',
     fWeightIn: 'Peso (opcional)', weightPh: 'ej. 4.2',
     resTitle: 'Recursos', resNote: 'Consulta puntual: busca un comportamiento o abre el protocolo del momento que estás viviendo.',
-    resLockTitle: 'Diccionario y protocolos de crisis',
     homeEmptyCta: 'Empezar la evaluación', reassess: 'Volver a evaluar a mi gato',
     todayFocus: 'Foco de hoy', nightList: 'Checklist nocturno', logList: 'Registro de hoy',
     dayOf: 'Día {n} de 7', closeDay: 'Cerrar el día {n}', dayDone: 'Día cerrado',
@@ -3780,19 +3694,6 @@ const T = {
     crisisTitle: 'Rescatador de crisis', crisisNote: 'Protocolos para los seis momentos que más descompensan a un gato, con lo que hay que preparar antes, cómo saber si va bien y cuándo parar y llamar al veterinario.',
     crisisSteps: 'Paso a paso', crisisKit: 'Botiquín emocional', crisisWhen: 'Ventana',
     crisisGood: 'Señales de que va bien', crisisBad: 'Señales de alerta: consulta veterinaria', crisisErrors: 'Errores más comunes',
-    lockedTitle: 'Contenido del acceso completo',
-    payTitle: 'Desbloquea el acceso completo',
-    payBody: 'Tu lectura de bienestar y el plan de hoy son tuyos. El diccionario completo y los protocolos de crisis vienen con el acceso completo, pago único.',
-    payOnce: 'pago único', payBefore: 'antes', paySave: 'Hoy ahorras $28 USD',
-    payCta: 'Desbloquear por $12 USD', payBack: 'Seguir sin desbloquear',
-    payTotal: 'Valor total del paquete', payToday: 'Hoy pagas',
-    guarantee: 'Garantía incondicional de 7 días. Si sientes que no es para ti, te devolvemos tu dinero. Sin preguntas incómodas y sin trámites.',
-    bonuses: [
-      { name: 'Decodificador Felino completo', was: '$20', now: '$12' },
-      { name: 'Quiz de lectura rápida', was: '$5', now: '$0' },
-      { name: 'Generador de plan de 7 días', was: '$5', now: '$0' },
-      { name: 'Diccionario de comportamiento felino', was: '$5', now: '$0' },
-      { name: 'Rescatador de crisis', was: '$5', now: '$0' } ],
     ctaStart: 'Empezar la evaluación', ctaProfile: 'Continuar', ctaQuiz: 'Siguiente',
     ctaLast: 'Ver mi lectura', ctaResult: 'Ver mi plan de observación',
     steps: ['Ordenando tus 18 respuestas', 'Separando causa conductual de causa clínica', 'Priorizando el problema principal', 'Ajustando el plan a tu caso'],
@@ -3832,17 +3733,6 @@ const T = {
     forcedNote: 'You flagged medical signals: they take priority over the dominant behavior pattern ({x}), which is addressed once a clinical cause is ruled out.', signals: '02 · Signal distribution',
     action24: '03 · Next 24 hours', plan: '09 · 7-day plan',
     vetLabel: '10 · When to see a vet', restart: 'Start over',
-    offerTitle: 'Your report is ready',
-    offerLead: 'We finished cross-checking your answers. To open the full report and save your plan you need access: a one-time $12 USD payment. Here is what you get, in plain words.',
-    offerItems: [
-      { t: 'Your complete personalized report', b: 'Your cat\u2019s primary finding with its percentage, the secondary factor, the clinical reading of why it happens, your heaviest answers, five concrete recommendations, what to avoid this week, and the data ready for your vet.' },
-      { t: 'Your 7-day plan with a daily log', b: 'One action for the next 24 hours and seven days with checklists. You tick each day in the app and the plan matches your main priority, not a generic list.' },
-      { t: 'Dictionary of 26 behaviors', b: 'A search box where you type what your cat does and it tells you why, and what to do. For example: "calls at 3 a.m.", "urinates outside the box", "drinks a lot of water", "licks itself bald".' },
-      { t: 'What to do in hard moments', b: 'Step by step for moving house, for the vet visit and for when a new person or pet arrives. Includes the list of what to prepare beforehand so nothing is forgotten.' },
-      { t: 'Red flags clearly marked', b: 'For each behavior we say when it is normal and when you must see a vet the same day. No more wondering whether you are overreacting or missing something serious.' },
-      { t: 'It stays saved in your app', b: 'Look it up whenever you need, as often as you want. It is not a course or a long video: it is a tool to find the answer in the moment.' } ],
-    offerCta: 'Unlock everything for $12 USD',
-    offerNote: 'One-time payment of $12 USD, not a subscription. If it does not help you, we refund you within the first 7 days.',
     urgentBadge: 'Priority attention',
     urgentTitle: 'A vet needs to see this',
     urgentBody: 'You flagged at least one signal that may be urgent. No behavior plan replaces a medical exam. Find care near you today.',
@@ -3881,7 +3771,7 @@ const T = {
     navHome: 'Home', navDiag: 'Reading', navRes: 'Resources', navExp: 'Exports',
     expTitle: 'Standalone deliverables',
     expNote: 'Each piece downloads as its own HTML file: it opens in any browser, works offline, and can be printed or sent separately.',
-    expDownload: 'Download', expLocked: 'Requires full access', expNeedsRead: 'Complete your reading first',
+    expDownload: 'Download', expNeedsRead: 'Complete your reading first',
     expItems: [
       { k: 'informe', t: 'Personalized report', b: 'Your main priority, the signal distribution, the case reading, your heaviest answers, the recommendations, what to avoid and the data for your vet.' },
       { k: 'plan', t: '7-day plan', b: 'The seven days tailored to your priority, with the daily log and space to tick each day on paper.' },
@@ -3890,7 +3780,6 @@ const T = {
     navDict: 'Dictionary', navCrisis: 'Crisis',
     fWeightIn: 'Weight (optional)', weightPh: 'e.g. 4.2',
     resTitle: 'Resources', resNote: 'Quick reference: look up a behavior or open the protocol for what you are going through.',
-    resLockTitle: 'Dictionary and crisis protocols',
     homeEmptyCta: 'Start the assessment', reassess: 'Assess my cat again',
     todayFocus: 'Today\u2019s focus', nightList: 'Night checklist', logList: 'Today\u2019s log',
     dayOf: 'Day {n} of 7', closeDay: 'Close day {n}', dayDone: 'Day closed',
@@ -3900,19 +3789,6 @@ const T = {
     crisisTitle: 'Crisis rescue', crisisNote: 'Protocols for the six moments that destabilize a cat the most, with what to prepare beforehand, how to tell it is going well, and when to stop and call the vet.',
     crisisSteps: 'Step by step', crisisKit: 'Emotional first-aid kit', crisisWhen: 'Window',
     crisisGood: 'Signs it is going well', crisisBad: 'Warning signs: see a vet', crisisErrors: 'Most common mistakes',
-    lockedTitle: 'Full access content',
-    payTitle: 'Unlock full access',
-    payBody: 'Your wellbeing reading and today\u2019s plan are yours. The full dictionary and crisis protocols come with full access, one single payment.',
-    payOnce: 'one-time payment', payBefore: 'before', paySave: 'You save $28 USD today',
-    payCta: 'Unlock for $12 USD', payBack: 'Continue without unlocking',
-    payTotal: 'Total package value', payToday: 'You pay today',
-    guarantee: 'Unconditional 7-day guarantee. If you feel it is not for you, we refund your money. No awkward questions, no paperwork.',
-    bonuses: [
-      { name: 'Feline Decoder, full access', was: '$20', now: '$12' },
-      { name: 'Quick reading quiz', was: '$5', now: '$0' },
-      { name: '7-day plan generator', was: '$5', now: '$0' },
-      { name: 'Feline behavior dictionary', was: '$5', now: '$0' },
-      { name: 'Crisis rescue', was: '$5', now: '$0' } ],
     ctaStart: 'Start the assessment', ctaProfile: 'Continue', ctaQuiz: 'Next',
     ctaLast: 'See my reading', ctaResult: 'See my observation plan',
     steps: ['Sorting your 18 answers', 'Separating behavioral from clinical cause', 'Ranking the primary problem', 'Tailoring the plan to your case'],
@@ -3932,8 +3808,8 @@ const T = {
 
 class Component extends DCLogic {
   state = { lang: null, step: 'welcome', qi: 0, answers: {}, name: '', age: null, home: null, aStep: 0,
-    section: 'home', phase: 'profile', done: false, safety: [], weight: '', resTab: 'dict', payOpen: false,
-    pro: false, day: 1, night: {}, days: {}, query: '', openD: null, openC: 0,
+    section: 'home', phase: 'profile', done: false, safety: [], weight: '', resTab: 'dict',
+    day: 1, night: {}, days: {}, query: '', openD: null, openC: 0,
     vCountry: '', vCity: '', vZone: '', vNeed: 0, vSearched: false,
     medName: '', medDose: '', medTime: '', dietNote: '' };
 
@@ -3947,7 +3823,7 @@ class Component extends DCLogic {
     this.setState({ phase: 'analyzing', aStep: 0 });
     clearInterval(this._iv); clearTimeout(this._to);
     this._iv = setInterval(() => this.setState(s => ({ aStep: Math.min(3, s.aStep + 1) })), 520);
-    this._to = setTimeout(() => { clearInterval(this._iv); this.setState({ phase: this.state.pro ? 'report' : 'offer', done: this.state.pro }); }, 2200);
+    this._to = setTimeout(() => { clearInterval(this._iv); this.setState({ phase: 'report', done: true }); }, 2200);
   }
 
   scores() {
@@ -4194,11 +4070,8 @@ class Component extends DCLogic {
       alarmContinue: () => this.setState({ phase: 'quiz', qi: 0 }),
       isQuizSingle: isQuiz && single, isQuizList: isQuiz && !single,
       isAnalyzing: st.section === 'diag' && st.phase === 'analyzing',
-      isOffer: st.section === 'diag' && st.phase === 'offer',
       isResult: st.section === 'diag' && st.phase === 'report',
       isVets: st.section === 'diag' && st.phase === 'vets',
-      offerItems: L.offerItems.map((o, i) => ({ n: String(i + 1).padStart(2, '0'), title: o.t, body: o.b })),
-      offerUnlock: () => this.setState({ pro: true, phase: 'report', done: true }),
       isUrgent: redCount > 0,
       goVets: () => this.setState({ phase: 'vets' }),
       vetsBack: () => this.setState({ phase: 'report' }),
@@ -4294,10 +4167,9 @@ class Component extends DCLogic {
 
       isHome: st.section === 'home' && st.done,
       isPlan: st.section === 'home' && st.done,
-      isRes: st.section === 'res' && st.pro && !st.payOpen,
-      isDict: st.section === 'res' && st.pro && !st.payOpen && st.resTab === 'dict',
-      isCrisis: st.section === 'res' && st.pro && !st.payOpen && st.resTab === 'crisis',
-      isPaywall: st.section === 'res' && st.payOpen,
+      isRes: st.section === 'res',
+      isDict: st.section === 'res' && st.resTab === 'dict',
+      isCrisis: st.section === 'res' && st.resTab === 'crisis',
       resTabs: [['dict', L.navDict], ['crisis', L.navCrisis]].map(([id, label]) => {
         const on = st.resTab === id;
         return { label, bg: on ? '#12333A' : '#fff', fg: on ? '#fff' : '#6E7378', bc: on ? '#12333A' : '#DDD9D2',
@@ -4347,35 +4219,27 @@ class Component extends DCLogic {
         steps: c.steps[lang].map((s, j) => ({ n: String(j + 1).padStart(2, '0'), text: s })),
         kit: c.kit[lang], good: c.good[lang], bad: c.bad[lang], errors: c.errors[lang],
         toggle: () => this.setState(s => ({ openC: s.openC === i ? null : i })) })),
-      showLock: st.section === 'res' && !st.pro && !st.payOpen,
-      lockLabel: L.resLockTitle,
-      goPay: () => this.setState({ payOpen: true }),
-      unlock: () => this.setState({ pro: true, payOpen: false }),
-      payBack: () => this.setState({ payOpen: false }),
-      bonuses: L.bonuses,
       navItems: [['home', L.navHome], ['diag', L.navDiag], ['res', L.navRes], ['exp', L.navExp]].map(([id, label]) => {
         const on = st.section === id;
         return { label, fg: on ? '#0E7C86' : '#8A8F94', dotBg: on ? '#0E7C86' : 'transparent',
-          go: () => this.setState({ section: id, payOpen: false }) };
+          go: () => this.setState({ section: id }) };
       }),
 
       isExp: st.section === 'exp',
       expRows: L.expItems.map(it => {
-        const needsRead = (it.k === 'informe' || it.k === 'plan') && !st.done;
-        const locked = !st.pro || needsRead;
+        const locked = (it.k === 'informe' || it.k === 'plan') && !st.done;
         return {
           title: it.t, body: it.b,
-          locked, label: needsRead ? L.expNeedsRead : (locked ? L.expLocked : L.expDownload),
+          locked, label: locked ? L.expNeedsRead : L.expDownload,
           bg: locked ? '#F1EFEA' : '#0E7C86', fg: locked ? '#A5A9AD' : '#fff',
           cursor: locked ? 'not-allowed' : 'pointer',
           act: () => {
-            if (needsRead) { this.setState({ section: 'diag' }); return; }
-            if (!st.pro) { this.setState({ section: 'res', payOpen: true }); return; }
+            if (locked) { this.setState({ section: 'diag' }); return; }
             this.download(it.k, expData);
           }
         };
       }),
-      showFooter: st.section === 'diag' && st.phase !== 'analyzing' && st.phase !== 'offer' && st.phase !== 'vets' && st.phase !== 'alarm',
+      showFooter: st.section === 'diag' && st.phase !== 'analyzing' && st.phase !== 'vets' && st.phase !== 'alarm',
       canGoBack: st.section === 'diag' && (st.phase === 'safety' || isQuiz),
       back: () => {
         if (st.phase === 'safety') this.setState({ phase: 'profile' });
